@@ -46,13 +46,14 @@ func main() {
 	log.Println(os.Getenv("INVOICER_POSTGRES_USER"), os.Getenv("INVOICER_POSTGRES_HOST"))
 	if os.Getenv("INVOICER_USE_POSTGRES") != "" {
 		log.Println("Opening postgres connection")
-		db, err = gorm.Open("postgres", fmt.Sprintf("postgres://%s:%s@%s/%s?sslmode=%s",
+		db, err = gorm.Open( "postgres", "host=invoicer-db.ctpb48bf0kd6.ap-south-1.rds.amazonaws.com port=5432 user=invoicer dbname=invoicer sslmode=disable password=deadb3#f")
+		/*db, err = gorm.Open("postgres", fmt.Sprintf("postgres://%s:%s@%s/%s?sslmode=%s",
 			os.Getenv("INVOICER_POSTGRES_USER"),
 			os.Getenv("INVOICER_POSTGRES_PASSWORD"),
 			os.Getenv("INVOICER_POSTGRES_HOST"),
 			os.Getenv("INVOICER_POSTGRES_DB"),
 			os.Getenv("INVOICER_POSTGRES_SSLMODE"),
-		))
+		)*/)
 	} else {
 		log.Println("Opening sqlite connection")
 		db, err = gorm.Open("sqlite3", "invoicer.db")
