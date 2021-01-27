@@ -53,7 +53,7 @@ func main() {
 			os.Getenv("INVOICER_POSTGRES_HOST"),
 			os.Getenv("INVOICER_POSTGRES_DB"),
 			os.Getenv("INVOICER_POSTGRES_SSLMODE"),
-		)*/)
+		))*/
 	} else {
 		log.Println("Opening sqlite connection")
 		db, err = gorm.Open("sqlite3", "invoicer.db")
