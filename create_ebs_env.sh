@@ -31,6 +31,7 @@ aws ec2 create-security-group \
 dbsg=$(jq -r '.GroupId' tmp/$identifier/dbsg.json)
 echo "DB security group is $dbsg"
 
+exit #FIXME
 # Create the database
 dbinstclass="db.t2.micro"
 dbstorage=5
