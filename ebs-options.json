@@ -12,21 +12,26 @@
     {
         "Namespace": "aws:elasticbeanstalk:application:environment", 
         "OptionName": "INVOICER_POSTGRES_PASSWORD", 
-        "Value": "POSTGRESPASSREPLACEME"
+        "Value": "deadb3#f"
     }, 
     {
         "Namespace": "aws:elasticbeanstalk:application:environment", 
         "OptionName": "INVOICER_POSTGRES_DB", 
-        "Value": "invoicer"
+        "Value": "invoicer-db"
     }, 
     {
         "Namespace": "aws:elasticbeanstalk:application:environment", 
         "OptionName": "INVOICER_POSTGRES_HOST", 
-        "Value": "POSTGRESHOSTREPLACEME"
+        "Value": "invoicer-db.ctpb48bf0kd6.ap-south-1.rds.amazonaws.com"
     },
     {
         "Namespace": "aws:elasticbeanstalk:application:environment", 
         "OptionName": "INVOICER_POSTGRES_SSLMODE", 
         "Value": "disable"
+    },
+    {
+        "Namespace": "aws:autoscaling:launchconfiguration", 
+        "OptionName": "IamInstanceProfile",
+        "Value": "aws-elasticbeanstalk-ec2-role"
     }
 ]
